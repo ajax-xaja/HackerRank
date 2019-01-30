@@ -12,7 +12,7 @@ public class Solution {
         // 'smallest' must be the lexicographically smallest substring of length 'k'
         // 'largest' must be the lexicographically largest substring of length 'k'
         for(int i = 0; i <= s.length() - k; i++) {
-            String substring = s.substring(i, (i + k));
+            String substring = s.substring(i, (i+k));
 
             if(substring.compareTo(smallest) < 0) {
                 smallest = substring;
@@ -28,12 +28,9 @@ public class Solution {
 
     public static String getSmallestAndLargestImproved(String s, int k) {
         SortedSet<String> sets = new TreeSet<String>();
+        for(int i = 0; i < s.length()-k; i++) {
 
-        for(int i = 0; i <= s.length() - k; i++) {
-            sets.add(s.substring(i, i + k));
         }
-
-        return sets.first() + "\n" + sets.last();
     }
 
     public static void main(String[] args) {
